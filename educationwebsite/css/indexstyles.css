@@ -1,0 +1,149 @@
+* {
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', Arial;
+}
+
+/* Start Navbar */
+
+.navbar-wrapper{
+	background-color: #003366;
+	height: 5em;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.irisacademytext{
+	display: flex;
+	margin-left: 5%;
+}
+
+.iristxt{
+	padding-right: 0.7%;
+	margin-left: 2%;
+	color: blueviolet;
+}
+
+.academytxt{
+	color: #f5f5f5;
+}
+
+.loginlink{
+	position: relative;
+	text-decoration: none;
+	color: #ffffff;
+	margin-right: 2em;
+	vertical-align: -120%;
+	font-size: 130%;
+	text-transform: uppercase;
+}
+
+.loginlink:hover{
+	color: blueviolet;
+}
+
+/* End Navbar */
+
+/* Start Main  */
+
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  top: 0;
+	position: fixed;
+	z-index: -1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+	width: 50%;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+	width: 50%;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered.right{
+	left: 30%;
+	top: 40%;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+	width: 50em;
+	max-width: 200%;
+	height: auto;
+	margin-left: -40%;
+}
+
+@media screen and (max-width: 1600px) {
+  .split{
+		position: absolute;
+	}
+	.left{
+		top: 0;
+		left: 20%;
+
+	}
+	.right{
+		top: 50em;
+		left: 0;
+		text-align: center;
+	}
+}
+
+.wemaketxt{
+	font-size: 500%;
+	color: blueviolet;
+}
+
+.typewriter{
+	font-size: 700%;
+	margin-top: -20%;
+	color: #003366;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #003366;
+  color: blueviolet;
+}
+
+.button1:hover {
+  background-color: white;
+	color: #003366;
+	border: 2px solid #003366;
+}
+
+/* End Main  */

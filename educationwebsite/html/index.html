@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iris Academy</title>
+    <link rel="stylesheet" href="../css/indexstyles.css">
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <style>
+      body{
+        font-family: 'Open Sans', serif;
+      }
+      .links{
+      	text-decoration: none;
+      	color: #32cd32;
+      }
+    </style>
+  </head>
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded',function(event){
+  // array with texts to type in typewriter
+  var dataText = [ "Mathematicians", "Writers", "Programmers", "Scientists", "Engineers", "Artists"];
+
+  // type one text in the typwriter
+  // keeps calling itself until the text is finished
+  function typeWriter(text, i, fnCallback) {
+    // chekc if text isn't finished yet
+    if (i < (text.length)) {
+      // add next character to h1
+     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+
+      // wait for a while and call this function again for next character
+      setTimeout(function() {
+        typeWriter(text, i + 1, fnCallback)
+      }, 100);
+    }
+    // text finished, call callback if there is a callback function
+    else if (typeof fnCallback == 'function') {
+      // call callback after timeout
+      setTimeout(fnCallback, 700);
+    }
+  }
+  // start a typewriter animation for a text in the dataText array
+   function StartTextAnimation(i) {
+     if (typeof dataText[i] == 'undefined'){
+        setTimeout(function() {
+          StartTextAnimation(0);
+        }, 20000);
+     }
+     // check if dataText[i] exists
+    if (i < dataText[i].length) {
+      // text exists! start typewriter animation
+     typeWriter(dataText[i], 0, function(){
+       // after callback (and whole text has been animated), start next text
+       StartTextAnimation(i + 1);
+     });
+    }
+  }
+  // start the text animation
+  StartTextAnimation(0);
+});
+</script>
+  <body>
+    <!-- ==================== Start Navbar ==================== -->
+      <nav class="navbar">
+        <div class="navbar-wrapper">
+            <div class="leftbar">
+                <div class="irisacademytext">
+                  <h2 class="iristxt">Iris</h2>
+                  <h2 class="academytxt">Academy</h2>
+                </div>
+            </div>
+            <div class="rightbar">
+              <div class="links">
+                 <a class="loginlink" href="../php/login.php">Login</a>
+                 <a class="loginlink" href="../php/signup.php">Sign Up</a>
+              </div>
+            </div>
+        </div>
+      </nav>
+    <!-- ==================== End Navbar ==================== -->
+    <!-- ==================== Start Main ==================== -->
+    <div class="main">
+      <div class="split left">
+        <div class="centered">
+          <img src="../img/Idle - Iris.png" alt="Iris(Idle)">
+        </div>
+      </div>
+
+      <div class="split right">
+        <div class="centered right">
+          <h2 class="wemaketxt">We Make</h2>
+          <h1 class="typewriter">Typewriter text</h2>
+          <h3>Here at Iris Academy, our mission is to give everyone the opportunity to world-class education.</h3>
+          <a href="../php/login.php"><button class="button button1">Get Started</button></a>
+        </div>
+      </div>
+    </div>
+    <!-- ==================== End Main ==================== -->
+    <!-- ==================== Start PHP ==================== -->
+    <!-- ==================== End PHP ==================== -->
+  </body>
+</html>
